@@ -1,0 +1,38 @@
+---
+
+#php
+php_version: 7.0
+
+#basic setting
+cakephp3_project_name: 'your_cakephp3_project_name'
+cakephp3_app_dir: 'the directory you craete cakephp3 project'
+cakephp3_required_packages:
+  - "php{{ php_version }}-curl"
+  - "php{{ php_version }}-intl"
+  - "php{{ php_version }}-mbstring"
+  - "php{{ php_version }}-mysql"
+
+#nginx
+cakephp3_webserver_app: 'nginx'
+cakephp3_nginx_conf_file: '/etc/nginx/sites-enabled/default'
+cakephp3_nginx_service_port: '80'
+
+#app.php email
+cakephp3_email_host: 'your_email_host_server'
+cakephp3_email_port: 'your_email_server_service_port'
+cakephp3_email_address: 'your_email_address'
+cakephp3_email_password: 'your_email_password'
+
+#app.php database(default)
+cakephp3_db_default_driver: 'Cake\Database\Driver\MySql'
+cakephp3_db_default_host: 'your_database_host'
+cakephp3_db_default_username: 'your_database_username'
+cakephp3_db_default_password: 'your_database_password'
+cakephp3_db_default_database: 'your_database_name'
+
+#app.php database(test)
+cakephp3_db_test_driver: 'Cake\Database\Driver\MySql'
+cakephp3_db_test_host: 'your_test_database_host'
+cakephp3_db_test_username: 'your_test_database_username'
+cakephp3_db_test_password: 'your_test_database_password'
+cakephp3_db_test_database: 'your_test_database_name'

@@ -9,3 +9,5 @@
 
 - include: nginx_conf.yml tags=nginx
   when: execute_nginx_conf.rc == 1 and cakephp3_webserver_app == 'nginx'
+
+- include: app.yml tags=cakephp3
