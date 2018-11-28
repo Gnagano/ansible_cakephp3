@@ -1,0 +1,14 @@
+---
+php_version: 7.0
+cakephp3_project_name: 'test'
+cakephp3_app_dir: "/home/doc_root"
+cakephp3_required_packages:
+  - "php{{ php_version }}-curl"
+  - "php{{ php_version }}-intl"
+  - "php{{ php_version }}-mbstring"
+
+cakephp3_nginx_conf_file:
+  '/etc/nginx/sites-enabled/default'
+
+cakephp3_webserver_app: 'nginx'
+cakephp3_nginx_service_port: '80'
