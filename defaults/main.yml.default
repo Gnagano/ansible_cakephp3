@@ -13,8 +13,8 @@ cakephp3_required_packages:
   - "php{{ php_version }}-mysql"
 
 #nginx
-cakephp3_nginx_conf_file: '/etc/nginx/sites-enabled/default'
 cakephp3_webserver_app: 'nginx'
+cakephp3_nginx_conf_file: '/etc/nginx/sites-enabled/default'
 cakephp3_nginx_service_port: '80'
 
 #app.php email
