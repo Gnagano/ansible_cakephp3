@@ -1,5 +1,5 @@
 ---
-- include: install.yml   tags=nginx
+#- include: install.yml   tags=cakephp3
 
 #Not executed if location directive has already added nginx conf
 - name: check execute nginx_conf.yml or not
@@ -7,7 +7,8 @@
   register: execute_nginx_conf
   failed_when: execute_nginx_conf.rc not in [0, 1]
 
-- include: nginx_conf.yml tags=nginx
-  when: execute_nginx_conf.rc == 1 and cakephp3_webserver_app == 'nginx'
+#- include: nginx_conf.yml tags=cakephp3
+#  when: execute_nginx_conf.rc == 1 and cakephp3_webserver_app == 'nginx'
 
-- include: app.yml tags=cakephp3
+#- include: app.yml          tags=cakephp3
+- include: environments.yml tags=cakephp3
