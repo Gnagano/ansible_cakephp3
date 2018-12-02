@@ -10,6 +10,7 @@ cakephp3_required_packages:
   - "php{{ php_version }}-intl"
   - "php{{ php_version }}-mbstring"
   - "php{{ php_version }}-mysql"
+  - "php{{ php_version }}-xml"
 
 #nginx
 cakephp3_webserver_app: 'nginx'
