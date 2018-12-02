@@ -1,16 +1,16 @@
 ---
-- name: install required packages
+- name: install / install required packages
   package:
     name: "{{ item }}"
     state: present
     update_cache: yes
   with_items: "{{ cakephp3_required_packages }}"
 
-- name: app / set variable for directory and file
-  stat: path="{{ cakephp3_app_dir }}/{{ cakephp3_project_name }}/vendor/"
+- name: install / set variable for directory and file
+  stat: path="{{ cakephp3_project_dir }}/vendor/"
   register: app_vendor_dir
 
-- name: create project
+- name: install / create project
   command: "composer create-project --prefer-dist cakephp/app {{ cakephp3_project_name }}"
   args:
     chdir: "{{ cakephp3_app_dir }}"

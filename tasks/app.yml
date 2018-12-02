@@ -1,4 +1,4 @@
 - name: create app.php
   template:
     src: app.php.j2
-    dest: "{{ cakephp3_app_dir }}/{{ cakephp3_project_name }}/config/app.php"
+    dest: "{{ cakephp3_project_dir }}/config/app.php"

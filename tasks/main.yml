@@ -1,6 +1,7 @@
 ---
 - include: install.yml   tags=cakephp3
 
+
 #Not executed if location directive has already added nginx conf
 - name: check execute nginx_conf.yml or not
   shell: "grep '/{{ cakephp3_project_name }}/(.+' {{ cakephp3_nginx_conf_file }}"
@@ -9,5 +10,6 @@
 
 - include: nginx_conf.yml tags=cakephp3
  when: execute_nginx_conf.rc == 1 and cakephp3_webserver_app == 'nginx'
+
 
 - include: app.yml          tags=cakephp3

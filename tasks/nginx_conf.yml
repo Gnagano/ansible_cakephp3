@@ -1,7 +1,7 @@
-- name: delete end line of nginx conf
+- name: nginx_conf / delete end line
   shell: "sed -i '$d' {{ cakephp3_nginx_conf_file }}"
 
-- name: add cakephp3 routing info to nginx conf
+- name: nginx_conf / add cakephp3 routing info
   blockinfile:
     dest: "{{ cakephp3_nginx_conf_file }}"
     marker: "# ansible auto add cakephp3 conf"
@@ -9,7 +9,7 @@
     block: |
 
        location ~ ^/{{ cakephp3_project_name }}/(img|css|js|files)/(.+)$ {
-            root {{ cakephp3_app_dir }}/{{ cakephp3_project_name }}/webroot;
+            root {{ cakephp3_project_dir }}/webroot;
             try_files /$1/$2 =404;
         }
 
@@ -26,18 +26,18 @@
             try_files /{{ cakephp3_project_name }}/$1 /{{ cakephp3_project_name }}/$1/ /{{ cakephp3_project_name }}/index.php?$1&args;
         }
 
-- name: add clousure to EOF
+- name: nginx_conf / add clousure to EOF
   lineinfile:
     dest: "{{ cakephp3_nginx_conf_file }}"
     line: "}"
 
-- name: nginx restart
+- name: nginx_conf / nginx restart
   systemd:
     name: nginx
     state: reloaded
     enabled: yes
 
-- name: Wait for nginx restart
+- name: nginx_conf / wait for nginx restart
   wait_for:
     host: "{{ ansible_eth1.ipv4.address }}"
     port:  "{{ cakephp3_nginx_service_port }}"
