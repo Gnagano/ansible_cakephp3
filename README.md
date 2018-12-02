@@ -52,6 +52,10 @@ After editing main.yml, just execute main.yml
   The service port for nginx.
   The default value is `80`
 
+#### cakephp3_security_salt
+
+  Plese set your app's security_salt which will be added in app.php
+
 #### cakephp3_email_host
 #### cakephp3_email_port
 #### cakephp3_email_address

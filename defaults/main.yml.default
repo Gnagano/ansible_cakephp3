@@ -16,6 +16,9 @@ cakephp3_webserver_app: 'nginx'
 cakephp3_nginx_conf_file: '/etc/nginx/sites-enabled/default'
 cakephp3_nginx_service_port: '80'
 
+#app.php security.salt
+cakephp3_security_salt: 'your_security_salt'
+
 #app.php email
 cakephp3_email_host: 'your_email_host_server'
 cakephp3_email_port: 'your_email_server_service_port'
