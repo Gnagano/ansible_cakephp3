@@ -5,6 +5,7 @@ php_version: 7.0
 #basic setting
 cakephp3_project_name: 'your_cakephp3_project_name'
 cakephp3_app_dir: 'the directory you craete cakephp3 project'
+cakephp3_project_dir: "{{ cakephp3_app_dir }}/{{ cakephp3_project_name }}"
 cakephp3_required_packages:
   - "php{{ php_version }}-curl"
   - "php{{ php_version }}-intl"
