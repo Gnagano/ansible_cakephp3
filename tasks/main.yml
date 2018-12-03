@@ -13,3 +13,5 @@
 
 
 - include: app.yml          tags=cakephp3
+
+- include: phpunit.yml      tags=cakephp3

@@ -1,0 +1,11 @@
+---
+- name: php_unit / edit composer.json
+  lineinfile:
+    dest: "{{ cakephp3_project_dir }}/composer.json"
+    insertafter: "\"require-dev\":"
+    line: "\t\t\t\t\"phpunit/phpunit\": \"^5.7|^6.0\","
+
+- name: composer_install / composer update
+  shell: 'composer update'
+  args:
+    chdir: "{{ cakephp3_project_dir }}"
