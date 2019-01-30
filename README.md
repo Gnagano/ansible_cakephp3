@@ -21,7 +21,7 @@ After editing main.yml, just execute main.yml
 
 ## Role Variables
 
-#### php_version
+#### php_package_version
 
   Set '7.0' if you use php version higher than 7.0, even though you use php7.1 or php7.2 and higher.
 
