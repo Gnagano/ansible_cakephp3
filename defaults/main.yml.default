@@ -1,17 +1,19 @@
 
 #php
-php_version: 7.0
+php_package_version: 7.0
 
 #basic setting
 cakephp3_project_name: 'your_cakephp3_project_name'
 cakephp3_app_dir: 'the directory you craete cakephp3 project'
 cakephp3_project_dir: "{{ cakephp3_app_dir }}/{{ cakephp3_project_name }}"
 cakephp3_required_packages:
-  - "php{{ php_version }}-curl"
-  - "php{{ php_version }}-intl"
-  - "php{{ php_version }}-mbstring"
-  - "php{{ php_version }}-mysql"
-  - "php{{ php_version }}-xml"
+  - "php{{ php_package_version }}-curl"
+  - "php{{ php_package_version }}-intl"
+  - "php{{ php_package_version }}-mbstring"
+  - "php{{ php_package_version }}-mysql"
+  - "php{{ php_package_version }}-xml"
+  - "php{{ php_package_version }}-sqlite"
+
 
 #nginx
 cakephp3_webserver_app: 'nginx'
